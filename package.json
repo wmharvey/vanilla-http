@@ -1,0 +1,21 @@
+{
+  "name": "vanillahttp",
+  "version": "1.0.0",
+  "description": "A Vanilla HTTP Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Whitney",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^2.3.4"
+  }
+}
