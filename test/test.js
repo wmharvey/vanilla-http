@@ -8,16 +8,8 @@ var expect = chai.expect;
 
 describe('the time request', function() {
 
-  before(function(done) {
-    server.listen(8080, done);
-  });
-
-  after(function(done) {
-    server.close(done);
-  });
-
   it('should return the current date via plain text', function(done) {
-    chai.request('http://localhost:8080')
+    chai.request(server)
       .get('/time')
       .end(function(err, res) {
         expect(err).to.be.null;
@@ -30,16 +22,8 @@ describe('the time request', function() {
 
 describe('the greet url', function() {
 
-  before(function(done) {
-    server.listen(8080, done);
-  });
-
-  after(function(done) {
-    server.close(done);
-  });
-
   it('should respond to a get request', function(done) {
-    chai.request('http://localhost:8080')
+    chai.request(server)
       .get('/greet/George')
       .end(function(err, res) {
         expect(err).to.be.null;
@@ -51,7 +35,7 @@ describe('the greet url', function() {
   });
 
   it('should respond to a post request', function(done) {
-    chai.request('http://localhost:8080')
+    chai.request(server)
       .post('/greet')
       .type('form')
       .send({ name: 'George'})
